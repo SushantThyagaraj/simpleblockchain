@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<title>Node(s) Information</title>
+
+<head>
+   <meta charset="UTF-8">
+   <title>Title</title>
+   <style>
+      table,
+      th,
+      td {
+         border: 1px solid black;
+      }
+
+      .thick-border {
+         border: 3px solid black;
+         border-collapse: collapse;
+      }
+   </style>
+</head>
+
+<body>
+   {% for key,val in response.items() %}
+      {% if key == "total_nodes" %}
+         <table class="centered border" style="margin-bottom:25px;">
+            <thead style="border: 1px solid black;">
+               <tr>
+                  <th>Node Address</th>
+               </tr>
+            </thead>
+            <tbody>
+               {% for address in val %}
+               <tr>
+                  <td> {{ address }} </td>
+               </tr>
+               </tbody>
+            {% endfor %}
+         </table>
+      {% else %}
+         <h1>{{ val }}</h1>
+      {% endif %}
+   {% endfor %}
+</body>

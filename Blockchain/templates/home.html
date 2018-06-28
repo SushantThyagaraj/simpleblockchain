@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Simple Blockchain Application</title>
+
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/lux.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+<!--Navigation Bar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="sticky-bar" style="padding-top:5px !important; padding-bottom:5px !important;">
+    <a class="navbar-brand" href="#">Blocko</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#frontNavbar" aria-expanded="true">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="frontNavbar">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">How It Works</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Test It!</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" style="padding-top:5px;padding-bottom:5px">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit" style ="padding-top:5px;padding-bottom:5px">Search</button>
+        </form>
+    </div>
+</nav>
+<!--Background Image-->
+<div id = "bg-img" class="view">
+    <div class="full-bg-img">
+<!--Title Text-->
+        <div id="title-text" class="h1" style="font-size:45px;font:sans-serif">
+            Simple Blockchain App
+            <div id="button-homepage">
+                <a href="/mine" class="btn btn-info" role="button">Mine</a>
+                <a href="/transactions/new" class="btn btn-secondary" role="button">Add A Transaction</a>
+                <a href="/chain" class="btn btn-success" role="button">Full Blockchain</a>
+                <a href="/nodes/register" class="btn btn-danger" role="button">Register A Node</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<footer class="footer">
+<p>&copy; ST 2018</p>
+</footer>
+
+</body>
+
+</html>

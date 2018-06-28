@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<title>Full Blockchain</title>
+
+<head>
+   <meta charset="UTF-8">
+   <title>Title</title>
+   <style>
+      table,
+      th,
+      td {
+         border: 1px solid black;
+      }
+
+      .thick-border {
+         border: 3px solid black;
+         border-collapse: collapse;
+      }
+   </style>
+</head>
+
+<body>
+   {% for iter in response['chain'] %}
+   <table class="centered thick-border" style="margin-bottom:25px;">
+      <thead style="border: 1px solid black;">
+         <tr>
+            <th>Block Element</th>
+            <th>Value</th>
+         </tr>
+      </thead>
+      <tbody>
+         {% for key, val in iter.items() %}
+         <tr>
+            <td> {{ key }} </td>
+            {% if val and val is iterable and val is not string %}
+            <td>
+               <table align="center">
+                  <thead>
+                     <tr>
+                        <th>Details</th>
+                        <th>Value</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     {% for k, v in val[0].items() %}
+                     <tr>
+                        <td> {{ k }} </td>
+                        <td> {{ v }} </td>
+                     </tr>
+                  </tbody>
+                  {% endfor %}
+               </table>
+            </td>
+            {% else %}
+               <td>{{ val }}</td>
+            {% endif %}
+         </tr>
+         {% endfor %}
+      </tbody>
+   </table>
+   {% endfor %}
+</body>
